@@ -31,15 +31,15 @@ public class EduEcVehiculo {
         System.out.println("MOTOR:"+x.getMotor ());
         System.out.println("NUMERO PUERTAS: "+x.getNumeroPuertas());
         System.out.println("NUMERO ASIENTOS: "+ x.getCantidadAsientos());
-        System.out.println("VELOCIDAD MAXIMA: "+x.getVelocidadMaxima());
-        System.out.println("VELOCIDAD ACTUAL:"+x.getVelocidadActual());
+        System.out.println("VELOCIDAD MAXIMA: "+x.getVelocidadMaxima()+"km/h");
+        System.out.println("VELOCIDAD ACTUAL:"+x.getVelocidadActual()+"km/h");
         System.out.println("COLOR: "+x.getColor());
         System.out.println("TIPO COMBUSTIBLE: "+x.getTipoCombustible ());
         System.out.println("TIPO AUTOMOVIL: "+x.getTipoAutomovil());
-        System.out.println("TIEMPO DE LLEGADA CON VELOCIDAD ACTUAL: "+ x.tiempoLlegada(5000)/*<-DISTANCIA*/);
-        System.out.println("VELOCIDAD ACTUAL ACELERADA: "+x.acelerar());
-        System.out.println("VELOCIDAD ACTUAL DESACELERADA: "+ x.desacelerar());
-        System.out.println("FRENAR AUTOMOVIL:"+x.frenar());
+        System.out.println("TIEMPO DE LLEGADA CON VELOCIDAD ACTUAL: "+ x.tiempoLlegada(5000)/*<-DISTANCIA*/+"h");
+        x.acelerar(20);
+        x.desacelerar(50);
+        System.out.println("FRENAR AUTOMOVIL:"+x.frenar()+"km/h");
         
     }
 }

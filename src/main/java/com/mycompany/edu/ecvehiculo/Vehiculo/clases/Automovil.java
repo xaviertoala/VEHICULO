@@ -109,16 +109,25 @@ public class Automovil {
         this.tipoAutomovil = tipoAutomovil;
     }
     //METODOS: 
-    public double acelerar (){
-        int acelerar = 20; 
-        return acelerar+this.velocidadActual;
+    public void acelerar (int acelerar){
+        //int acelerar = 20; 
+        if (acelerar < velocidadMaxima){
+            this.velocidadActual+=acelerar;
+            System.out.println("VELOCIDAD ACTUAL ACELERADA: "+velocidadActual+"km/h");
+        } else {
+            System.out.println("Error: No permitido acelerar mas que la velocidad Maxima.");   
+        }       
     }
-    public double desacelerar (){
-        int desacelerar = 50;
-        return  this.acelerar()- desacelerar;
+    public void desacelerar (int desacelerar){
+        if ((desacelerar > 0) &&(desacelerar < velocidadMaxima)){
+            velocidadActual=velocidadActual-desacelerar;
+            System.out.println("VELOCIDAD ACTUAL DESACELERADA: "+velocidadActual+"km/h");
+        } else {
+            System.out.println("Error: no permitido desacelerar menos a 0.");
+        }
     }    
     public double frenar (){
-        double frenar = this.acelerar();
+        double frenar = velocidadActual;
         return 0;
     }
     public double tiempoLlegada (double distancia){
@@ -130,8 +139,8 @@ public class Automovil {
         System.out.println("Motor: "+ getMotor());
         System.out.println("Numero de puertas: "+ getNumeroPuertas());
         System.out.println("Numero de asientos: "+ getCantidadAsientos());
-        System.out.println("Alcanze de velocidad (velocidad maxima): "+ getVelocidadMaxima());
-        System.out.println("Velocidad Actual: "+ getVelocidadActual());
+        System.out.println("Alcanze de velocidad (velocidad maxima): "+ getVelocidadMaxima()+"km/h");
+        System.out.println("Velocidad Actual: "+ getVelocidadActual()+"km/h");
         System.out.println("Color: "+getColor());
         System.out.println("Tipo de Autmovil: "+ getTipoAutomovil());
         System.out.println("Tipo de combustible: "+getTipoCombustible());
